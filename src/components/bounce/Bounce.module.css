@@ -1,0 +1,8 @@
+.bounce {
+    background: green;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    visibility: hidden;
+}

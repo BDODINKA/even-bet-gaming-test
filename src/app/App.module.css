@@ -1,0 +1,25 @@
+.wrapper {
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.squares_block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.squares__block_square {
+    animation: animate 2s alternate infinite linear;
+}
+
+@keyframes animate {
+    from {
+        transform: translate(0, -30vh);
+    }
+    to {
+        transform: translate(0, 30vh);
+    }
+}
