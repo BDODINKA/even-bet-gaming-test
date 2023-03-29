@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/even-bet-gaming/static/css/main.b95cd8a0.css",
-    "main.js": "/even-bet-gaming/static/js/main.6add9c01.js",
-    "static/js/787.ed8cf845.chunk.js": "/even-bet-gaming/static/js/787.ed8cf845.chunk.js",
-    "index.html": "/even-bet-gaming/index.html",
-    "main.b95cd8a0.css.map": "/even-bet-gaming/static/css/main.b95cd8a0.css.map",
-    "main.6add9c01.js.map": "/even-bet-gaming/static/js/main.6add9c01.js.map",
-    "787.ed8cf845.chunk.js.map": "/even-bet-gaming/static/js/787.ed8cf845.chunk.js.map"
+    "main.css": "/even-bet-gaming-test/static/css/main.b95cd8a0.css",
+    "main.js": "/even-bet-gaming-test/static/js/main.29c34bf4.js",
+    "static/js/787.ed8cf845.chunk.js": "/even-bet-gaming-test/static/js/787.ed8cf845.chunk.js",
+    "index.html": "/even-bet-gaming-test/index.html",
+    "main.b95cd8a0.css.map": "/even-bet-gaming-test/static/css/main.b95cd8a0.css.map",
+    "main.29c34bf4.js.map": "/even-bet-gaming-test/static/js/main.29c34bf4.js.map",
+    "787.ed8cf845.chunk.js.map": "/even-bet-gaming-test/static/js/787.ed8cf845.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b95cd8a0.css",
-    "static/js/main.6add9c01.js"
+    "static/js/main.29c34bf4.js"
   ]
 }
