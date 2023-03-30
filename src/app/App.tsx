@@ -31,35 +31,54 @@ export const App = () => {
     top: undefined,
     left: undefined,
   })
+  const [currPosCircle, setCurrPosCircle] = useState<undefined | any>({
+    top: positionCircle.top,
+    left: positionCircle.left,
+  })
 
   const [isStartAnim, setIsStartAnim] = useState(false)
 
   useEffect(() => {
-    if (distance && refSquare1.current) {
-      setPositionCircle({ left: distance - measure.y2, top: measure.y1 })
-    }
-  }, [distance, measure.y1])
+    animation(refCircle.current, {
+      start: {
+        top: currPosCircle.top,
+        left: currPosCircle.left,
+      },
+      finish: { top: measure.y2 + 50, left: measure.x2 + 50 },
+    })
+  }, [width, height])
 
   useEffect(() => {
-    if (isStartAnim && refCircle.current) {
+    if (distance && refSquare1.current) {
+      setPositionCircle({
+        left: distance - (measure.x1 + refSquare1.current?.getBoundingClientRect().width / 2),
+        top: measure.y1 + refSquare1.current?.getBoundingClientRect().width / 2,
+      })
+    }
+  }, [distance, measure.y1, measure.y2])
+
+  useEffect(() => {
+    if (isStartAnim && refCircle.current && refSquare1.current) {
       animation(refCircle.current, {
         start: {
           top: positionCircle.top,
           left: positionCircle.left,
         },
-        finish: { top: measure.y2, left: measure.x2 },
+        finish: {
+          top: measure.y2 + refSquare1.current?.getBoundingClientRect().width / 2,
+          left: measure.x2 + refSquare1.current?.getBoundingClientRect().width / 2,
+        },
       })
       setIsStartAnim(false)
     }
   }, [isStartAnim, measure])
 
   useEffect(() => {
-    if (isStartAnim) return
     if (refCircle.current) {
       refCircle.current.style.left = `${positionCircle.left}px`
       refCircle.current.style.top = `${positionCircle.top}px`
     }
-  }, [positionCircle.left, positionCircle.top, refCircle.current, isStartAnim])
+  }, [positionCircle.left, positionCircle.top, refCircle.current])
 
   useEffect(() => {
     setDistance(measure.x2 - measure.x1)
@@ -91,7 +110,7 @@ export const App = () => {
           className={style.squares__block_square}
           id={'square'}
         />
-        {positionCircle ? <Bounce ref={refCircle} id={'circle'} /> : undefined}
+        <Bounce ref={refCircle} id={'circle'} />
         <Square ref={refSquare2} titleNum={'2'} id={'square2'} />
       </div>
       <Button title={'start'} time={timer} onClick={pushBounceHandler} />
